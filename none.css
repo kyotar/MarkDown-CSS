@@ -1,8 +1,8 @@
-/************************ 
+/************************
 * MarkdownPad2 Custom CSS
-* Author : KYOTA KONNO 
-* Ver:1.2
-* Last Updated: 2013-09-03
+* Author : KYOTA KONNO
+* Ver:1.3.3
+* Last Updated: 2013-11-18
 ************************/
 
 /* RESET
@@ -17,14 +17,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* BODY
 =============================================================================*/
 html {
-  background-color: #f3f3f3;
+  background-color: #FDFDFD;
 }
 
 body {
   font-family:"メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
+  font-size: 16px;
+  line-height: 2;
+  color: #555;
   max-width: 960px;
   padding: 40px;
   margin: 0 auto;
@@ -73,25 +73,21 @@ h1 {
 }
 
 h2 {
-  font-size: 28px;
-  border-bottom: 1px solid #ddd;
+  font-size: 32px;
+  border-bottom: 1px solid #ccc;
   padding: 5px 0;
-  margin: 0 0 10px 0;
+  margin: 80px 0 20px 0;
+}
+
+section h2 {
+  margin: 0 0 20px 0;
 }
 
 h3 {
-  font-size: 22px;
-  margin: 40px 0 0 0;
-}
-
-h3:before {
-  content: '';
-  display: inline-block;
-  width: 0.5em;
-  height: 0.5em;
-  border-radius:0.25em;
-  background:#000;
-  margin-right: 0.25em;
+  font-size: 24px;
+  margin: 60px 0 10px 0;
+  padding: 5px 10px;
+  border-left: 3px solid #000;
 }
 
 h2 + h3, h3 + h4 {
@@ -100,16 +96,27 @@ h2 + h3, h3 + h4 {
 
 h4 {
   margin: 40px 0 0 0;
-  font-size: 16px;
+  font-size: 20px;
+}
+
+h4:before {
+  content: '';
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius:0.25em;
+  background:#000;
+  margin-right: 0.25em;
+  margin-bottom: 2px;
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 h6 {
   color: #777;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /*
@@ -133,13 +140,13 @@ h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
 a {
   color: #428bca;
   text-decoration: none;
+  border-bottom: 1px dotted #428bca;
   padding:0.1em;
 }
 
 a:hover {
   background:rgba(66,139,202,0.1);
   box-shadow: 0 0 5px rgba(66,139,202,0.4);
-  border-radius: 4px;
 }
 
 /* Select Color
@@ -148,7 +155,7 @@ a:hover {
 	background: rgba(0,0,0,0.1);
 }
 
-::-moz-selection{ 
+::-moz-selection{
 	background: rgba(0,0,0,0.1);
 }
 
@@ -159,11 +166,15 @@ ul, ol {
   padding-left: 30px;
 }
 
-ul li > :first-child, 
-ol li > :first-child, 
-ul li ul:first-of-type, 
-ol li ol:first-of-type, 
-ul li ol:first-of-type, 
+li {
+  margin: 10px 0;
+}
+
+ul li > :first-child,
+ol li > :first-child,
+ul li ul:first-of-type,
+ol li ol:first-of-type,
+ul li ol:first-of-type,
 ol li ul:first-of-type {
   margin-top: 0px;
 }
@@ -218,12 +229,12 @@ pre, code, tt {
 }
 
 code, tt {
-  margin: 0 0px;
-  padding: 0px 0px;
+  margin: 0px;
+  padding: 2px 5px;
   white-space: nowrap;
-  border: 1px solid #e1e1e8;
-  background-color: #f7f7f9;
-  border-radius: 3px;
+  background-color: #F1F1F1;
+  border: 1px solid #CACADA;
+  border-radius: 4px;
 }
 
 pre>code {
@@ -235,13 +246,13 @@ pre>code {
 }
 
 pre {
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
+  background-color: #F1F1F1;
+  border: 1px solid #CACADA;
   font-size: 13px;
   line-height: 19px;
   overflow: auto;
   padding: 6px 10px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 pre code, pre tt {
@@ -253,9 +264,11 @@ pre code, pre tt {
 =============================================================================*/
 
 blockquote {
-  border-left: 4px solid #e1e1e8;
-  padding: 0 15px;
-  color: #777;
+  background: #eee;
+  padding: 20px 20px 20px 60px;
+  color: #999;
+  font-style: italic;
+  position: relative;
 }
 
 blockquote>:first-child {
@@ -266,17 +279,27 @@ blockquote>:last-child {
   margin-bottom: 0px;
 }
 
+blockquote:before {
+  content: '"';
+  font-size: 60px;
+  display: inline-block;
+  position: absolute;
+  top: -0.1em;
+  left: 15px;
+  color: #ccc;
+}
+
 /* HORIZONTAL RULES
 =============================================================================*/
 
 hr {
   clear: both;
-  margin: 15px 0;
+  margin: 40px 0;
   height: 0px;
   overflow: hidden;
   border: none;
   background: transparent;
-  border-bottom: 4px solid #eee;
+  border-bottom: 4px solid #ccc;
   padding: 0;
 }
 
@@ -320,8 +343,8 @@ section {
   margin: 60px 0;
   padding: 40px;
   background-color: #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  border: 4px solid #FCFCFC;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  border: 4px solid #F0F0F0;
 }
 
 aside {
