@@ -1,5 +1,13 @@
-#MarkDown_CSS
+#md.css
 
 ##説明
-Markdown用のCSSです。
-主にMarkdownPad2に最適化されておりますが、他のツールなどでも使用できると思います。
+Markdownなどの素のHTMLを見やすく表示できるCSSです。
+
+#Markdown以外に対応しているタグ
+- section
+- aside
+- 色指定(.red, .geen, .gray)
+- 小さい文字(.small)
+
+##変更履歴
+2013.12.09 -Github公開(ver 1.4)
